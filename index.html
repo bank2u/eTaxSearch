@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        /* customize the page */
+        body {
+            background-color: #f2f2f2;
+        }
+
+        /* customize the search box */
+        #searchBox {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* customize the grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            margin: 20px;
+        }
+
+        /* customize the grid item style */
+        .grid-item {
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // load the JSON file using AJAX
+            $.ajax({
+                type: "GET",
+                url: "eTax.json",
+                dataType: "json",
+                success: function (jsonData) {
+                    // search function
+                    $("#searchButton").click(function () {
+                        // get the value of the text box
+                        var searchValue = $("#searchText").val();
+                        var data = jsonData.data;
+                        // search for the value in the JSON file
+                        var result = '';
+                        for (var i = 0; i < data.length; i++) {
+                            for (var j = 0; j < data[i].length; j++) {
+                                if (data[i][j].name.includes(searchValue) || data[i][j].tax.includes(searchValue)) {
+                                    result += '<div class="grid-item">' + data[i][j].name + ' - ' + data[i][j].tax + '</div>';
+                                }
+                            }
+                        }
+                        // check if there are any results
+                        if (result) {
+                            document.getElementById("grid").innerHTML = result;
+                        } else {
+                            document.getElementById("grid").innerHTML = "No results found";
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Error: Could not load JSON file.");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" id="searchBox">
+                <input type="text" class="form-control" id="searchText" placeholder="Search...">
+                <button class="btn btn-primary btn-block" id="searchButton">Search</button>
+            </div>
+        </div>
+        <div id="grid" class="grid"></div>
+    </div>
+</body>
+
+</html>
