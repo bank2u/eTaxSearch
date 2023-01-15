@@ -2,7 +2,7 @@ $(document).ready(function () {
     // load the JSON file using AJAX
     $.ajax({
         type: "GET",
-        url: "eTax.json",
+        url: "eTax.json?v=1",
         dataType: "json",
         success: function (jsonData) {
             // search function
@@ -31,4 +31,10 @@ $(document).ready(function () {
             alert("Error: Could not load JSON file.");
         }
     });
+
+    $('#txtSearch').on("keydown", function(e) {
+        if (e.keyCode == 13) {
+            $("#btnSearch").click();
+        }
+});
 });
