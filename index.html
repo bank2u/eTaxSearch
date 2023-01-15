@@ -15,26 +15,27 @@
 </head>
 
 <body>
-    <div class="title justify-content-center">
-        <h1 class="m-0"><i class="fas fa-search mx-4"></i>ผู้ประกอบการ ที่รองรับ E-TAX </h1>
-    </div>
-    <div class="container">
-        <div class="d-flex flex-row justify-content-center">
-            <div class="form-group col-6 mx-md-3">
-                <input type="text" class="form-control" id="txtSearch"
-                    placeholder="ชื่อบริษัท(ภาษาไทย) หรือ Tax No">
+    <div class="container-fluid">
+        <div class="title justify-content-center">
+            <h1 class="m-0"><i class="fas fa-search mx-4"></i>ผู้ประกอบการ ที่รองรับ E-TAX </h1>
+        </div>
+        <div class="container">
+            <div class="d-flex flex-row justify-content-center">
+                <div class="form-group col-6 mx-md-3">
+                    <input type="text" class="form-control" id="txtSearch"
+                        placeholder="ชื่อบริษัท(ภาษาไทย) หรือ Tax No">
+                </div>
+                <button id="btnSearch" class="btn btn-custom mx-3">Search</button>
             </div>
-            <button id="btnSearch" class="btn btn-custom mx-3">Search</button>
+            <div class="result-grid" id="grdResult">
+            </div>
         </div>
-        <div class="result-grid" id="grdResult">
-        </div>
+        <footer class="footer-style">
+            <div class="text-center py-3">
+                <p>Crafted with love by <a href="https://openai.com/">ChatGPT</a> and <a
+                        href="https://github.com/bank2u/">bank2u</a></p>
+            </div>
+        </footer>
     </div>
-    <footer class="footer-style">
-        <div class="text-center py-3">
-            <p>Crafted with love by <a href="https://openai.com/">ChatGPT</a> and <a
-                    href="https://github.com/bank2u/">bank2u</a></p>
-        </div>
-    </footer>
 </body>
-
 </html>
