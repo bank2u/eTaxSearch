@@ -1,0 +1,78 @@
+/* Custom styles */
+.title {
+    padding: 20px;
+    background-color: #1A5276;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.form-control,
+.btn {
+    height: 60px;
+    font-size: 20px;
+    padding: 0px 20px;
+}
+
+.btn-custom {
+    border: none;
+    background-color: steelblue !important;
+    color: #fff;
+}
+
+.result-grid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-card {
+    padding: 20px;
+    background-color: #E1F5FE;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 30%;
+    margin: 5px;
+}
+
+/* random background color */
+.result-card:nth-child(2n) {
+    background-color: #E8EAF6;
+}
+
+.result-card:nth-child(3n) {
+    background-color: #FFF8E1;
+}
+
+.result-card:nth-child(4n) {
+    background-color: #FDEBD0;
+}
+
+.result-card:nth-child(5n) {
+    background-color: #E8F5E9;
+}
+
+.result-card:nth-child(6n) {
+    background-color: #FFE0F2;
+}
+
+.result-card h5 {
+    margin-bottom: 10px;
+}
+
+.footer-style {
+    background-color: #f9f9f9;
+    font-size: 12px;
+}
